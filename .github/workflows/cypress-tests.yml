@@ -34,7 +34,7 @@ jobs:
         run: cd $GITHUB_WORKSPACE/test
            
       - name: Install dependencies
-        run: npm install cypress
+        run: npm install cypress --save-dev
 
       - name: Run Cypress tests
         run: |
