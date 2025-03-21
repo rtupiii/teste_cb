@@ -111,5 +111,41 @@ Siga os passos abaixo para instalar e configurar o projeto localmente:
 
     ![alt text](readme-img/image-3.png)
 
-npx cypress run --env grep=@smoke
+## Usando sem o Runner
+
+Você também pode utilizar o Cypress por script, direto do seu terminal de preferência com tags (Disponíveis: @login, @cadastro e @transferencia):
+```bash
+npx cypress run --env grep=@'CENARIO_DESEJADO'
+```
+ou 
+```bash
+npx cypress run
+```
+Para trocar o browser adicionei a tag --browser (Disponíveis: edge, chrome e electron):
+
+```bash
+npx cypress run --browser 'BROWSER_DESEJADO'
+```
+
+### GitHub Actions
+
+- O GitHub Actions foi configurado para que sejam rodados todos os testes a cada commit na branch 'main' e diariamente às 08h da manhã.
+- Estão disponíveis em [Cypress Tests](.github/workflows/cypress-tests.yml) e [Daily Workflow](.github/workflows/daily-workflow.yml)
+- São gerados vídeos e evidências de todos os testes que ficam disponíveis em [GitHub Actions](https://github.com/rtupiii/teste_cb/actions)
+
+### Bugs encontrados
+
+Apenas um Bug foi encontrado durante os testes pois foquei muito mais na arquitetura e reutilização de código do que no teste em si (que acredito ser o principal e mais fácil de continuar a partir daqui):
+
+- Esse bug está relacionado à criação de conta com caractéres acima do normal. Por padrão, eu tentei criar uma conta com um número muito maior de carácteres, números, caractéres especiais e espaços. Todos foram aceitos e a conta é criada normalmente. Esse cenário pode ser visto no [Cadastro](test/cypress/e2e/features/register.cy.js), onde adicionei um "cy.log" que adiciona uma mensagem durante os testes para que fique claro o falso positivo.
+
+![alt text](readme-img/bug.png)
+
+- A reprodução do erro consiste em:
+
+Acessar página em: http://localhost:3000/ > Botão 'Registrar' > Completar todos os campos e no campo nome você pode colocar uma frase, números ou caractéres especiais > Botão 'Cadastrar'
+
+- O padrão deveria ser um pop-up de erro, mas o enviado é um de criação bem-sucedida:
+
+![alt text](readme-img/bug2.png)
 
