@@ -1,4 +1,4 @@
-describe('Testes na página de registro', () => {
+describe('Testes na página de registro [@cadastro]', () => {
   
   it('Registro com sucesso', () => {
     cy.criarConta('teste@teste.com', 'Teste da Silva', 'senha_teste');

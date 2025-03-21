@@ -1,4 +1,4 @@
-describe('Testes na página de login', () => {
+describe('Testes na página de login [@login]', () => {
   beforeEach(() => {
     cy.criarConta('teste@teste.com', 'Teste da Silva', 'senha_teste');
   });

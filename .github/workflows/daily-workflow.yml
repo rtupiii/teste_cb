@@ -1,12 +1,8 @@
-name: Cypress Tests
+name: Daily Cypress Workflow
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    schedule:
+      - cron: '0 8 * * *'
 
 jobs:
   cypress-run:
@@ -40,7 +36,7 @@ jobs:
           cd $GITHUB_WORKSPACE/test
           npm install
           npm install cypress --save-dev
-          npm install cypress-grep --force
+          npm install cypress-tags --save-dev
 
       - name: Run Cypress tests
         run: |

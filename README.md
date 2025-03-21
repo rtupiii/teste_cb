@@ -111,5 +111,5 @@ Siga os passos abaixo para instalar e configurar o projeto localmente:
 
     ![alt text](readme-img/image-3.png)
 
-
+npx cypress run --env grep=@smoke
 
