@@ -11,7 +11,7 @@
   "keywords": [],
   "author": "Rafael Tupinelli",
   "license": "MIT",
-  "description": "",
+  "description": "Testes automatizados com Cypress para o site das Casas Bahia.",
   "devDependencies": {
     "cypress": "^14.2.0"
   }

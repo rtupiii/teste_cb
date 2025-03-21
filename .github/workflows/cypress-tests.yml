@@ -36,7 +36,9 @@ jobs:
           ls 
            
       - name: Install dependencies
-        run: npm install cypress --save-dev
+        run: |
+          npm install
+          npm install cypress --save-dev
 
       - name: Run Cypress tests
         run: npm test
