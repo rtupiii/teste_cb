@@ -27,8 +27,8 @@ jobs:
       - name: Install bugbank-ui dependencies and run
         run: |
           cd bugbank-ui
-          yarn
-          yarn dev
+          yarn 
+          yarn dev & #
       
       - name: Navigate to project directory
         run: |
