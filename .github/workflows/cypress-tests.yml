@@ -13,18 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/https://github.com/rtupiii/teste_cb.git
+        uses: actions/checkout@v3
 
-      # Passo 2: Configura o Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16 # Define a versão do Node.js
+          node-version: 16
 
-      # Passo 3: Instala as dependências do projeto
       - name: Install dependencies
         run: npm install
 
-      # Passo 4: Executa os testes do Cypress
       - name: Run Cypress tests
-        run: npm test
+        uses: cypress-io/github-action@v5
+        with:
+          record: true
+          browser: chrome
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
