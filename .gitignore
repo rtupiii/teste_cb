@@ -1,3 +1,4 @@
 bugbank-ui
 test/node_modules
 package-lock.json
+test/cypress/screenshots
