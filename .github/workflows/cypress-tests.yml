@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 22
       
       - name: Clone bugbank-ui repository
         run: |
@@ -39,4 +39,4 @@ jobs:
         run: npm install cypress --save-dev
 
       - name: Run Cypress tests
-        run: npm run test
+        run: npm test
