@@ -31,8 +31,7 @@ jobs:
           yarn dev & #
       
       - name: Navigate to project directory
-        run: |
-          cd ~/test
+        run: cd $GITHUB_WORKSPACE/test
            
       - name: Install dependencies
         run: npm install cypress
