@@ -115,6 +115,8 @@ Siga os passos abaixo para instalar e configurar o projeto localmente:
 
 ## Usando sem o Runner
 
+⚠️ **Atenção:** Só será possível rodar sem o Runner após a instalação com os scripts .ps1 corretamente acima.
+
 Você também pode utilizar o Cypress por script, direto do seu terminal de preferência com tags (Disponíveis: @login, @cadastro e @transferencia):
 ```bash
 npx cypress run --env grep=@'CENARIO_DESEJADO'
