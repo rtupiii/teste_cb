@@ -20,16 +20,25 @@ jobs:
         with:
           node-version: 16
       
-      - name: Navigate to project directory
-        run: cd test 
+      - name: Clone bugbank-ui repository
+        run: |
+          git clone https://github.com/jhonatasmatos/bugbank-ui.git
 
+      - name: Install bugbank-ui dependencies and run
+        run: |
+          cd bugbank-ui
+          yarn
+          yarn dev
+      
+      - name: Navigate to project directory
+        run: |
+          cd ..
+          cd test
+           
       - name: Install dependencies
-        run: npm install
+        run: npm install cypress
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v5
         with:
-          record: true
           browser: chrome
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
