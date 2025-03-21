@@ -61,6 +61,8 @@ Aqui estão alguns cenários de teste escritos em Gherkin que cobrem funcionalid
 
 ```bash
 CB-TESTE
+├──.github
+│   ├── workflows
 ├── readme-img/
 ├── test
 │   ├── cypress
@@ -78,7 +80,7 @@ Antes de começar, você precisará ter instalado em sua máquina as seguintes f
 
 - [Git](https://git-scm.com)
 - [Node.js](https://nodejs.org/)
-- [Cypress]()
+- [Cypress](https://www.cypress.io/)
 
 Caso você não tenha algumas dessas dependências, os scripts de inicialização irão lembra-lo de instalar. Além disso, é bom ter um editor para trabalhar com o código, como [VSCode](https://code.visualstudio.com/).
 
